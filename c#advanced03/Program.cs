@@ -1,6 +1,8 @@
 ﻿using System.Drawing;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Globalization;
+using System.Numerics;
 using static c_advanced03.Helper;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace c_advanced03
 {
     internal class Program
@@ -13,8 +15,8 @@ namespace c_advanced03
             //Helper.PrintGrades(grades);
             //Console.WriteLine($"Count: {grades.Count}");
             //Console.WriteLine($"First Grade: {grades.First()} , Last Grade: {grades.Last()}");
-            
-            
+
+
             ////Sort the grades ascending, then print
             //grades.Sort();
             //Helper.PrintSortedGrades(grades);
@@ -45,6 +47,45 @@ namespace c_advanced03
             //    Console.WriteLine(label);
             //}
 
+
+            #endregion
+
+            #region Exercise 2: Leaderboard
+           // //Create a leaderboard that automatically sorts players by score.
+           // SortedDictionary<int, string> leaderboard =
+           //new SortedDictionary<int, string>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+
+           // //Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+           // leaderboard.Add(500, "Ahmed");
+           // leaderboard.Add(200, "Sara");
+           // leaderboard.Add(800, "Ali");
+           // leaderboard.Add(350, "Mona");
+
+           // //Print all entries(they should be sorted by score automatically)
+           // PrintLeaderboard(leaderboard);
+
+           // //Access the first key and first value
+           // KeyValuePair<int, string> first = leaderboard.First();
+           // Console.WriteLine($"First Key: {first.Key} First Value: {first.Value}");
+
+           // //Check if score 500 exists
+           // bool isContians500=leaderboard.ContainsKey(500);
+           // Console.WriteLine(isContians500); //True
+
+           // //Safely get the player with score 999 >> tryGet
+           // if (leaderboard.TryGetValue(999, out string? player999))
+           // {
+           //     Console.WriteLine($"Player with score 999: {player999}");
+           // }
+           // else
+           // {
+           //     Console.WriteLine("No player found with score 999.");
+           // }
+
+           // //Remove the player with score 200 and print the updated list
+           // leaderboard.Remove(200);
+           // Console.WriteLine("Leader Board After Remove Key 200");
+           // Helper.PrintLeaderboard(leaderboard);
 
             #endregion
         }
