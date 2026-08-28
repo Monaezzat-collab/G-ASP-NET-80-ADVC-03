@@ -5,8 +5,14 @@ using System.Text;
 
 namespace c_advanced03
 {
-    public static class Helper
+    
+    public  class Helper
     {
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
         // ===================== Exercise 2: Leaderboard =====================
         public static void PrintGrades(List<int> grades)
         {
@@ -82,6 +88,8 @@ namespace c_advanced03
             bool wasAdded = phoneBook.TryAdd(name, number);
             Console.WriteLine($".TryAdd() for '{name}' succeeded? {wasAdded}");
         }
-
+        
     }
+
+    
 }

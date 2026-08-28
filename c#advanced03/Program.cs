@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Globalization;
 using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+using System.Xml;
 using System.Xml.Linq;
 using static c_advanced03.Helper;
 using static System.Net.Mime.MediaTypeNames;
@@ -133,7 +135,41 @@ namespace c_advanced03
             //// Print all Keys on one line, then all Values on another line
             //Helper.PrintKeysOnOneLine( phoneBook);
             //Helper.PrintValuesOnOneLine(phoneBook);
-            
+
+            #endregion
+
+            #region Exercise 4: Unique Email Validator
+            ////Use Collection to manage unique email addresses.
+            ////Create a HashSet<string> with a case -insensitive comparer: new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+            //HashSet<string> set = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            ////Add these emails: "ahmed@test.com", "AHMED@test.com", "sara@test.com", "Sara@Test.Com"
+            //set.Add("ahmed@test.com");
+            //set.Add("AHMED@test.com");
+            //set.Add("sara@test.com");
+            //set.Add("Sara@test.com");
+
+            ////Print Count — how many are actually stored? Explain why.
+            //Console.WriteLine(set.Count()); //2 duplicates Not Allowed at HashSet
+
+            ////Create two sets: Set A = { 1, 2, 3, 4, 5 } and Set B = { 4,5,6,7,8}
+            //HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+            //HashSet<int> setB = new HashSet<int> { 4, 5 ,6,7,8};
+
+            ////Print the result of: UnionWith, IntersectWith, ExceptWith
+            //HashSet<int> unionSet = new HashSet<int>(setA.Union(setB));
+            //Console.WriteLine(string.Join(",", unionSet)); //1,2,3,4,5,6,7,8 بيجمع بدون تكرار
+
+            //HashSet<int> intersect = new HashSet<int>(setA.Intersect(setB));
+            //Console.WriteLine(string.Join (",",intersect)); //4,5 المشترك
+
+            //HashSet<int> exceptSet = new HashSet<int>(setA.Except(setB)); //1,2,3 الفرق بين الاتنين
+            //Console.WriteLine(string.Join(",",exceptSet)); 
+
+            ////Use IsSubsetOf to check if { 1,2} is a subset of Set A
+            //HashSet<int>newSet=new HashSet<int> { 1,2};
+            //bool isSubsetOf = newSet.IsSubsetOf(setA);
+            //Console.WriteLine(isSubsetOf); //True
+
             #endregion
 
         }
