@@ -1,7 +1,10 @@
-﻿using System.Drawing;
+﻿using Microsoft.VisualBasic;
+using System.Drawing;
 using System.Globalization;
 using System.Numerics;
+using System.Xml.Linq;
 using static c_advanced03.Helper;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace c_advanced03
 {
@@ -51,43 +54,88 @@ namespace c_advanced03
             #endregion
 
             #region Exercise 2: Leaderboard
-           // //Create a leaderboard that automatically sorts players by score.
-           // SortedDictionary<int, string> leaderboard =
-           //new SortedDictionary<int, string>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+            // //Create a leaderboard that automatically sorts players by score.
+            // SortedDictionary<int, string> leaderboard =
+            //new SortedDictionary<int, string>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
 
-           // //Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
-           // leaderboard.Add(500, "Ahmed");
-           // leaderboard.Add(200, "Sara");
-           // leaderboard.Add(800, "Ali");
-           // leaderboard.Add(350, "Mona");
+            // //Add: 500 = "Ahmed", 200 = "Sara", 800 = "Ali", 350 = "Mona"
+            // leaderboard.Add(500, "Ahmed");
+            // leaderboard.Add(200, "Sara");
+            // leaderboard.Add(800, "Ali");
+            // leaderboard.Add(350, "Mona");
 
-           // //Print all entries(they should be sorted by score automatically)
-           // PrintLeaderboard(leaderboard);
+            // //Print all entries(they should be sorted by score automatically)
+            // PrintLeaderboard(leaderboard);
 
-           // //Access the first key and first value
-           // KeyValuePair<int, string> first = leaderboard.First();
-           // Console.WriteLine($"First Key: {first.Key} First Value: {first.Value}");
+            // //Access the first key and first value
+            // KeyValuePair<int, string> first = leaderboard.First();
+            // Console.WriteLine($"First Key: {first.Key} First Value: {first.Value}");
 
-           // //Check if score 500 exists
-           // bool isContians500=leaderboard.ContainsKey(500);
-           // Console.WriteLine(isContians500); //True
+            // //Check if score 500 exists
+            // bool isContians500=leaderboard.ContainsKey(500);
+            // Console.WriteLine(isContians500); //True
 
-           // //Safely get the player with score 999 >> tryGet
-           // if (leaderboard.TryGetValue(999, out string? player999))
-           // {
-           //     Console.WriteLine($"Player with score 999: {player999}");
-           // }
-           // else
-           // {
-           //     Console.WriteLine("No player found with score 999.");
-           // }
+            // //Safely get the player with score 999 >> tryGet
+            // if (leaderboard.TryGetValue(999, out string? player999))
+            // {
+            //     Console.WriteLine($"Player with score 999: {player999}");
+            // }
+            // else
+            // {
+            //     Console.WriteLine("No player found with score 999.");
+            // }
 
-           // //Remove the player with score 200 and print the updated list
-           // leaderboard.Remove(200);
-           // Console.WriteLine("Leader Board After Remove Key 200");
-           // Helper.PrintLeaderboard(leaderboard);
+            // //Remove the player with score 200 and print the updated list
+            // leaderboard.Remove(200);
+            // Console.WriteLine("Leader Board After Remove Key 200");
+            // Helper.PrintLeaderboard(leaderboard);
 
             #endregion
+
+            #region Exercise 3: Phone Book
+            ////Build a phone book application.
+            ////Create a Collection with 4 contacts(name → phone number)
+            //Dictionary<string, string> phoneBook = new Dictionary<string, string>
+            //{
+            //{ "Ahmed", "111-222-3333" },
+            //{ "Sara", "444-555-6666" },
+            //{ "Mona", "777-888-9999" },
+            //{ "Omar", "123-456-7890" } };
+            //Helper.PrintPhoneBook(phoneBook);
+
+            ////Add a new contact using [] syntax (add or update)
+            //phoneBook["Aya"]="555-666-7777"; //Added
+
+            ////Try adding a duplicate using .Add() — catch the exception and print the error
+            ////Helper.TryAddWithAdd(PhoneBook, "Ahmed", "111-222-3333"); 
+            //try
+            //{
+            //    phoneBook.Add("Ahmed","111-222-3333");
+
+            //}
+            //catch (Exception ex) {
+            //    Console.WriteLine("This Contact Already Found");
+            //}
+
+            ////Try adding a duplicate using .TryAdd() — print whether it succeeded
+            ////Helper.TryAddWithTryAdd(PhoneBook, "Mohamed", "222,333,4444");
+            //bool wasAdded = phoneBook.TryAdd("Mohamed", "222-333-4444");
+            //Console.WriteLine($"Try to add new contect succeeded? {wasAdded}");
+
+            ////Search for a contact that doesn’t exist
+
+            //Console.WriteLine("Is This Contact Exists?" + phoneBook.ContainsKey("Ali")); //False
+
+            ////Get a contact with a fallback of "Not Found"
+            //string sarasNumber = phoneBook.GetValueOrDefault("Sara", "Not Found");
+            //Console.WriteLine($"Sara's number (with fallback): {sarasNumber}");
+
+            //// Print all Keys on one line, then all Values on another line
+            //Helper.PrintKeysOnOneLine( phoneBook);
+            //Helper.PrintValuesOnOneLine(phoneBook);
+            
+            #endregion
+
         }
     }
 }

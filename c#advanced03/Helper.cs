@@ -52,14 +52,14 @@ namespace c_advanced03
         public static void PrintKeysOnOneLine(Dictionary<string, string> phoneBook)
         {
             List<string> keys = new List<string>(phoneBook.Keys);
-            Console.WriteLine(string.Join(", ", keys));
+            Console.WriteLine("Names: "+ string.Join(", ", keys));
         }
 
         // Prints all values on one line, separated by commas
         public static void PrintValuesOnOneLine(Dictionary<string, string> phoneBook)
         {
             List<string> values = new List<string>(phoneBook.Values);
-            Console.WriteLine(string.Join(", ", values));
+            Console.WriteLine("Numbers: "+string.Join(", ", values));
         }
 
         // Tries to add a contact using .Add(), catches and reports the exception if it already exists
