@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualBasic;
+using System.Collections;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Numerics;
@@ -152,24 +154,62 @@ namespace c_advanced03
             //Console.WriteLine(set.Count()); //2 duplicates Not Allowed at HashSet
 
             ////Create two sets: Set A = { 1, 2, 3, 4, 5 } and Set B = { 4,5,6,7,8}
-            //HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
-            //HashSet<int> setB = new HashSet<int> { 4, 5 ,6,7,8};
+            HashSet<int> setA = new HashSet<int> { 1, 2, 3, 4, 5 };
+            HashSet<int> setB = new HashSet<int> { 4, 5, 6, 7, 8 };
 
             ////Print the result of: UnionWith, IntersectWith, ExceptWith
+            //setA.UnionWith(setB); //
+            //Console.WriteLine("Union With: "+string.Join(",", setA)); //all without duplicate
+
+            //setA.IntersectWith(setB);
+            //Console.WriteLine("Intersect With: " + string.Join(",", setA)); //repeated elements
+
+            //setA.ExceptWith(setB);
+            //Console.WriteLine("Except With: " + string.Join(",", setA));
+
             //HashSet<int> unionSet = new HashSet<int>(setA.Union(setB));
             //Console.WriteLine(string.Join(",", unionSet)); //1,2,3,4,5,6,7,8 بيجمع بدون تكرار
 
             //HashSet<int> intersect = new HashSet<int>(setA.Intersect(setB));
-            //Console.WriteLine(string.Join (",",intersect)); //4,5 المشترك
+            //Console.WriteLine(string.Join(",", intersect)); //4,5 المشترك
 
             //HashSet<int> exceptSet = new HashSet<int>(setA.Except(setB)); //1,2,3 الفرق بين الاتنين
-            //Console.WriteLine(string.Join(",",exceptSet)); 
+            //Console.WriteLine(string.Join(",", exceptSet));
 
             ////Use IsSubsetOf to check if { 1,2} is a subset of Set A
             //HashSet<int>newSet=new HashSet<int> { 1,2};
             //bool isSubsetOf = newSet.IsSubsetOf(setA);
             //Console.WriteLine(isSubsetOf); //True
 
+            #endregion
+
+            #region  Exercise 5: Print Queue Simulator
+            ////Queue >>> FIFO first in first out
+            ////Create a Queue<string> and enqueue 5 documents: "Report.pdf", "Invoice.pdf", "Letter.docx", "Resume.pdf", "Photo.jpg"
+            //Queue<string> documents = new Queue<string>();
+            //documents.Enqueue("Report.pdf");
+            //documents.Enqueue("Invoice.pdf");
+            //documents.Enqueue("Letter.pdf");
+            //documents.Enqueue("Resume.pdf");
+            //documents.Enqueue("Photo.pdf");
+
+            ////Print the queue contents and Count
+            //foreach (string document in documents)
+            //{
+            //    Console.WriteLine(document);
+            //}
+            //Console.WriteLine(documents.Count);
+
+            ////Use Peek to see which document will print next(without removing)
+            //Console.WriteLine("Document Will Print Next "+documents.Peek()); //first in
+            ////Process the queue: Dequeue each document and print "Printing: [name]"
+            //while (documents.Count > 0)
+            //{
+            //    Console.WriteLine("Printing: " + documents.Dequeue());
+            //}
+        
+            ////Try TryDequeue on the now - empty queue — what happens?
+            ////documents.Dequeue(); //Exception cause it's already empty
             #endregion
 
         }
