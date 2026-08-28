@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Numerics;
+using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
+using System.Timers;
 using System.Xml;
 using System.Xml.Linq;
 using static c_advanced03.Helper;
@@ -207,9 +209,41 @@ namespace c_advanced03
             //{
             //    Console.WriteLine("Printing: " + documents.Dequeue());
             //}
-        
+
             ////Try TryDequeue on the now - empty queue — what happens?
             ////documents.Dequeue(); //Exception cause it's already empty
+            #endregion
+
+            #region Exercise 6: Browser History (Undo)
+            ////Simulate browser back/forward >>> stack >>>LIFO last in first out
+            ////Create a Stack<string> for browser history
+            //Stack<string> browserHistory= new Stack<string>();
+            ////Push 5 URLs: "google.com", "github.com", "stackoverflow.com", "youtube.com", "claude.ai"
+            //browserHistory.Push("google.com");
+            //browserHistory.Push("github.com");
+            //browserHistory.Push("stackoverflow.com");
+            //browserHistory.Push("claude.ai");
+            ////Use Peek to see the current page(top of stack)
+            //Console.WriteLine("The Current Page: "+browserHistory.Peek()); //The last one
+            ////Press "back" 3 times using Pop — print each page you leave
+            //while (browserHistory.Count > 0) {
+            //    Console.WriteLine("Page You Leave: " + browserHistory.Pop());  
+            //}
+
+            ////Print the current page after going back
+            ////Console.WriteLine("The Current Page: " + browserHistory.Peek()); //Exception
+
+            ////Try TryPop on an empty stack — what happens?
+            //if (browserHistory.TryPop(out string? result))
+            //{
+            //    Console.WriteLine("Popped Result: "+result);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("The Stack Is Empty!");
+            //}
+
+
             #endregion
 
         }
